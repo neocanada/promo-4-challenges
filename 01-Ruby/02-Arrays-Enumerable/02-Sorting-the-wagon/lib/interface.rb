@@ -37,6 +37,9 @@ end
 sort_students = wagon_sort(students)
 
 
-puts "Congratulations! Your Wagon has #{sort_students.size} students:
-#{sort_students[0]}, #{sort_students[1]} and #{sort_students[2]}"
-
+puts "Congratulations! Your Wagon has #{sort_students.size} students:"
+if sort_students.size >= 2
+  puts "#{sort_students[0..-2].join(', ')} and #{sort_students.last}"
+else
+  puts sort_students.first
+end
