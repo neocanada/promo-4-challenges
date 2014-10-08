@@ -21,3 +21,14 @@ puts "Hello, " + compute_name(first_name, middle_name, last_name)
 
 
 #end
+
+# Peut etre remplacer par:
+
+# def ask(message)
+#   puts message
+#   gets.chomp
+# end
+
+# first_name = ask("what's your first name?")
+# middle_name = ask("What's your middle name?")
+# last_name = ask("What's your last name?")
