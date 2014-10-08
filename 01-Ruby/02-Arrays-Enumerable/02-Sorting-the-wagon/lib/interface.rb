@@ -9,3 +9,34 @@ require_relative "wagon_sort"
 
 # TODO: Then call `wagon_sort` method defined in the wagon_sort.rb
 #       file and display the sorted student list
+
+
+# on demande d'ajouter un étudiant et de l'ajouter à un tableau "student_list"
+#def message(student_list)
+ # puts "Type a student name:"
+  #name = gets.chomp
+  #student_list << name
+#end
+#3.times { message(students) }
+
+
+
+
+
+students = []
+name = "hgcjhg"
+
+while name.length != 0
+  puts "Type a student name:"
+  name = gets.chomp
+  if name != ""
+    students << name
+  end
+end
+
+sort_students = wagon_sort(students)
+
+
+puts "Congratulations! Your Wagon has #{sort_students.size} students:
+#{sort_students[0]}, #{sort_students[1]} and #{sort_students[2]}"
+
