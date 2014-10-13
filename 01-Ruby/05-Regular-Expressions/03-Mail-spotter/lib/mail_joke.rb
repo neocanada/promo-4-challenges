@@ -20,6 +20,6 @@ def mail_joke(email)
   elsif email.include?(domaine_name[1])
     return "#{PROVIDER[domaine_name[1]]}#{name[1].gsub(/\./, " ")}, #{MAIL_JOKES[domaine_name[1]]}"
   else
-    return "Sorry #{name[1]}, we don't know how to judge '#{domaine_name[1]}'"
+    return "Sorry #{name[1].gsub(/\./, " ")}, we don't know how to judge '#{domaine_name[1]}'"
   end
 end
