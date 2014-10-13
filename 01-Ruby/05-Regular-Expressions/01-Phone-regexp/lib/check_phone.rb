@@ -1,9 +1,7 @@
 def french_phone_number?(phone_number)
-  phone_number = phone_number.gsub(" ", "").gsub("-", "")
+  phone_number = phone_number.gsub(/\s|-/, "")
 
-  if phone_number.match(/^0[^0]\d{8}$/)
-    return true
-  elsif phone_number.match(/^\+33[^0]\d{8}$/)
+  if phone_number.match(/^(0|\+33)[1-9]\d{8}$/)
     return true
   else
     return false
