@@ -45,7 +45,7 @@ class BankAccount
     if args[:password].nil?
       "no password given"
     elsif args[:password] == @password
-      transactions = @transactions.map { |i| "'" + i.to_s + "'" }.join(",")
+      transactions = @transactions.map { |i| "'#{i}'" }.join(",")
       "Here your transactions: #{transactions}\n"
     else
       "wrong password"
