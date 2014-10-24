@@ -9,7 +9,6 @@ class PostsController
 
   def index
     # TODO: implement listing all posts
-
   end
 
   def create

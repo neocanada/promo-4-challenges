@@ -19,17 +19,17 @@ class Post
   # TODO: implement all the class methods and instance methods
   #       to have a full CRUD support on your Post model
   def save
-   if @id.nil?
-     DB.execute("INSERT INTO posts (title, url, date, votes)
-     VALUES ('#{@title}', '#{@url}', #{@date.to_i}, #{@votes});")
-     @id = DB.last_insert_row_id
-   else
-     DB.execute("UPDATE posts
-     SET title = '#{@title}', url = '#{@url}', date = #{@date.to_i}, votes = #{votes}
-     WHERE id = #{@id}
-     ;")
-   end
- end
+    if @id.nil?
+      DB.execute("INSERT INTO posts (title, url, date, votes)
+      VALUES ('#{@title}', '#{@url}', #{@date.to_i}, #{@votes});")
+      @id = DB.last_insert_row_id
+    else
+      DB.execute("UPDATE posts
+      SET title = '#{@title}', url = '#{@url}', date = #{@date.to_i}, votes = #{votes}
+      WHERE id = #{@id}
+      ;")
+    end
+  end
 
   def upvote
     @votes += 1
@@ -47,7 +47,7 @@ class Post
     p all
     posts = []
     all.each do |post|
-      posts << Post.new( id: post[0], title: post[1], url: post[2], date: Time.at(post[3]), votes: post[4] )
+      posts << Post.new(id: post[0], title: post[1], url: post[2], date: Time.at(post[3]), votes: post[4])
     end
     posts
   end
@@ -59,7 +59,7 @@ class Post
     if find[0].nil?
       return nil
     else
-      Post.new({ id: find[0], title: find[1], url: find[2], date: Time.at(find[3]), votes: find[4]})
+      Post.new(id: find[0], title: find[1], url: find[2], date: Time.at(find[3]), votes: find[4])
     end
   end
 
